@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/', 'landing');
+
 Route::get('/about', function () {
     echo "<h1>This is the About page.</h1> ";
 });
