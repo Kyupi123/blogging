@@ -20,7 +20,10 @@ Route::get('/', function () {
 Route::view('/', 'landing');
 
 Route::get('/about', function () {
-    echo "<h1>This is the About page.</h1> ";
+    $title = 'About Us';
+    $desc = 'Blogging is website for sharing your thoughts and ideas with the world.';
+
+    return view('about', compact('title', 'desc'));
 });
 
 //parameter wajib
@@ -73,3 +76,5 @@ Route::prefix('/admin')->group(function () {
 Route::fallback(function () {
     return redirect('/');
 });
+
+
