@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,20 +20,14 @@ Route::get('/', LandingController::class);
 
 Route::view('/', 'landing');
 
-/*
-Route::get('/about', function () {
-    $title = 'About Us';
-    $desc = 'Blogging is website for sharing your thoughts and ideas with the world.';
-    $button = '<a class="btn btn-lg btn-secondary" href="/">Back to Landing Page</a>';
-
-
-    return view('about', compact('title', 'desc', 'button'));
-});
-*/
-
 Route::get('/about', [AboutController::class, 'index']);
 
+Route::get('/contact', [ContactController::class, 'index']);
+
+Route::post('/contact', [ContactController::class, 'store']);
+
 //parameter wajib
+/*
 Route::get('/salam/{nama}', function ($nama) {
     echo "<h2>Good day, $nama!</h2>";
 });
@@ -40,8 +35,9 @@ Route::get('/salam/{nama}', function ($nama) {
 Route::get('/salam', function(){
     echo "<h2>Good day, nameless one!</h2>";
 });
-
+*/
 //parameter opsional
+/*
 Route::get('/produk/{nama?}/{qty?}', function
 ($nama = "N/A", $qty = 0) {
     echo "<p>Jual <strong>$nama</strong>.
@@ -78,6 +74,7 @@ Route::prefix('/admin')->group(function () {
         echo "<h1>Administrasi Staf Kampus</h1>";
     });
 });
+*/
 
 Route::fallback(function () {
     return redirect('/');
