@@ -35,6 +35,6 @@ class ContactController extends Controller
         //atau penulisan singkatnya:
         //$contact = Contact::create($validated);
 
-        return redirect('/contact')->with('success', 'Terima kasih, kami akan segera menghubungi Anda!');
+        return redirect('/contact')->with('contact.index')->with('success', 'Terima kasih, kami akan segera menghubungi Anda!');
     }
 }
