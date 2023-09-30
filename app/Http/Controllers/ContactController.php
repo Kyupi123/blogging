@@ -27,6 +27,6 @@ class ContactController extends Controller
 
         $newContact -> save();
 
-        return redirect('/contact')->with('success', 'Terima kasih, kami akan segera menghubungi anda!');
+        return redirect('/contact')->with('success', 'Terima kasih, kami akan segera menghubungi Anda!');
     }
 }
