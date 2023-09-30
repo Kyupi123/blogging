@@ -19,13 +19,21 @@ class ContactController extends Controller
             "email" => 'required|string|email',
             "phone_number" => 'required|numeric|digits_between:5,15',
         ]);
-
+        /*
         $newContact = new Contact();
         $newContact -> full_name = $validated['full_name'];
         $newContact -> email = $validated['email'];
         $newContact -> phone_number = $validated['phone_number'];
 
-        $newContact -> save();
+        $newContact -> save();*/
+        $contact = Contact::create([
+            'full_name' => $validated['full_name'],
+            'email' => $validated['email'],
+            'phone_number' => $validated['phone_number'],
+        ]);
+
+        //atau penulisan singkatnya:
+        //$contact = Contact::create($validated);
 
         return redirect('/contact')->with('success', 'Terima kasih, kami akan segera menghubungi Anda!');
     }
