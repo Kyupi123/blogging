@@ -13,7 +13,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::paginate(10);
+        return view('articles.index', compact('articles'));
     }
 
     /**
@@ -54,7 +55,7 @@ class ArticleController extends Controller
             'image' => $validated['image'] ?? null,
         ]);
 
-        return $article;
+        return redirect()->route('articles.index')->with('success', 'Article added successfully.');
     }
 
     /**
@@ -62,7 +63,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        return view('articles.show', compact('article'));
     }
 
     /**
