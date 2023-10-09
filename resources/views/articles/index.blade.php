@@ -23,6 +23,7 @@
                     <th scope="col">Body</th>
                     <th scope="col">Created At</th>
                     <th scope="col">Updated At</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,18 @@
                         <td>{{ Str::limit($article->body, 50, ' ...') }}</td>
                         <td>{{ $article->created_at }}</td>
                         <td>{{ $article->updated_at }}</td>
+                        <td>
+                            <a href="{{ route('articles.edit', $article) }}" class="btn btn-primary btn-sm">
+                                Edit
+                            </a>
+                            <form action="{{ route('articles.destroy', $article) }}" method="POST" class="d-inline-block">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Are you sure?')">Delete
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 @empty
                     <tr>

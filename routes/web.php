@@ -17,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', LandingController::class);
+Route::get('/', LandingController::class)->name('landing');
 
-Route::view('/', 'landing');
+//kalau bagian ini di uncomment, akan error
+//Route::view('/', 'landing');
 
 Route::get('/about', [AboutController::class, 'index']);
 
