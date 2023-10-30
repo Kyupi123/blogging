@@ -22,7 +22,7 @@ Route::get('/', LandingController::class)->name('landing');
 //kalau bagian ini di uncomment, akan error
 //Route::view('/', 'landing');
 
-Route::get('/about', [AboutController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
@@ -83,3 +83,7 @@ Route::fallback(function () {
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
