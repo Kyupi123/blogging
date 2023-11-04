@@ -62,12 +62,12 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="name"
+                            <label for="phone_number"
                                 class="col-md-4 col-form-label text-md-end">{{ __('Phone Number') }}</label>
 
                             <div class="col-md-6">
                                 <input id="phone_number" type="text"
-                                    class="form-control @error('name') is-invalid @enderror" name="phone_number"
+                                    class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
                                     value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
 
                                 @error('phone_number')
@@ -79,12 +79,12 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="name"
+                            <label for="date_of_birth"
                                 class="col-md-4 col-form-label text-md-end">{{ __('Date of Birth') }}</label>
 
                             <div class="col-md-6">
                                 <input id="date_of_birth" type="date"
-                                    class="form-control @error('name') is-invalid @enderror" name="date_of_birth"
+                                    class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth"
                                     value="{{ old('date_of_birth') }}" required autocomplete="date_of_birth" autofocus>
 
                                 @error('date_of_birth')
