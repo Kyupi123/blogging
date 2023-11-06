@@ -15,6 +15,8 @@ class ArticleController extends Controller
 
     public function __construct()
     {
+        //bagian ini bisa juga digunakan pada web.php dengan menambahkan
+        //->middleware('auth', ('except' => ('show')))
         $this->middleware('auth')->except('show');
     }
     public function index()
