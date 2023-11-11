@@ -20,4 +20,12 @@ class Biodata extends Model
         'website',
         'instagram',
     ];
+
+/*  Alternatif invers dari penulisan relasi
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+*/
 }
+
+
