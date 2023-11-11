@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('biodatas', function (Blueprint $table) {
             $table->id();
+            //Jika ingin penamaan custom (1.)
+            //$table->primary('biodata_id');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('about_me')->default('');
             $table->string('address')->default('');
