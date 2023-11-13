@@ -12,12 +12,28 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory()->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        //admin
+        \App\Models\User::factory()->create([
+             'name' => 'Admin',
+             'email' => 'admin@likmi.ac.id',
+             'password' => bcrypt('12345678'),
+             'phone_number' => '08123456789',
+             'date_of_birth' => '1999-01-01',
+             'is_admin' => true,
+         ]);
+
+         //user
+         \App\Models\User::factory()->create([
+            'name' => 'David',
+            'email' => 'david@likmi.ac.id',
+            'password' => bcrypt('12345678'),
+            'phone_number' => '08123456789',
+            'date_of_birth' => '1999-01-01',
+            'is_admin' => false,
+        ]);
+
         $this->call([
             ArticleSeeder::class,
         ]);

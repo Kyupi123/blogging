@@ -31,6 +31,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" href="{{ route('biodata.show') }}">Biodata</a>
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
@@ -49,6 +51,7 @@
         @auth
             <div class="nav-scroller py-1 mb-2">
                 <nav class="nav d-flex justify-content-center">
+                    <a class="p-2 link-secondary" href="{{ route('categories.index') }}">Categories</a>
                     <a class="p-2 link-secondary" href="{{ route('articles.index') }}">Article</a>
                 </nav>
             </div>

@@ -16,6 +16,7 @@ class Article extends Model
         'body',
         'published_at',
         'views',
+        'category_id',
     ];
 
     protected $append = [
@@ -28,5 +29,10 @@ class Article extends Model
             return $this->image;
         }
         return $this->image ? Storage::url($this->image) : null;
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }
