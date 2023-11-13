@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('phone_number', 15)->after('email');
+            $table->string('phone_number', 15)->after('email')->nullable();
             $table->date('date_of_birth')->nullable()->after('phone_number');
+            $table->boolean('is_admin')->default(false);
         });
     }
 
@@ -27,6 +28,7 @@ return new class extends Migration
             //
             $table->dropColumn('phone_number');
             $table->dropColumn('date_of_birth');
+            $table->dropColumn('is_admin');
         });
     }
 };
